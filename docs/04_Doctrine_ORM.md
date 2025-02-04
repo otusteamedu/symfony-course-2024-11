@@ -936,9 +936,9 @@
         */
        public function createUserWithFollower(string $login, string $followerLogin): array
        {
-           $user = $this->userService->create($login);
-           $follower = $this->userService->create($followerLogin);
-           $this->userService->subscribeUser($user, $follower);
+           $user = $this->userManager->create($login);
+           $follower = $this->userManager->create($followerLogin);
+           $this->userManager->subscribeUser($user, $follower);
            $this->subscriptionService->addSubscription($user, $follower);
    
            return [$user, $follower];

@@ -4,7 +4,7 @@
 
 ## Устанавливам API Platform
 
-1. Заходим в контейнер `php` командой `docker exec -it php sh`. Дальнейшие команды выполняются из контейнера
+1. Заходим в контейнер `php` командой `docker exec -it php-1 sh`. Дальнейшие команды выполняются из контейнера
 2. Устанавливаем пакет `api-platform/core`
 3. В файле `config/packages/api_platform.yaml`
    1. удаляем параметр `keep_legacy_inflector`

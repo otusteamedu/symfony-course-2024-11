@@ -390,7 +390,7 @@
 
 ## Добавляем исходящий DTO
 
-1. Добавляем класс `App\Controller\Web\CreateUser\v1\Output\CreatedUserDTO`
+1. Добавляем класс `App\controller\Web\CreateUser\v1\Output\CreatedUserDTO`
    ```php
    <?php
    

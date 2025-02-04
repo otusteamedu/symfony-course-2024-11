@@ -1,0 +1,39 @@
+@host = http://localhost:7777
+
+### Create user
+
+POST {{host}}/api/v2/user
+Content-Type: application/json
+
+{
+    "login": "user",
+    "phone": "+79991113322",
+    "password": "password",
+    "age": 25,
+    "isActive": true,
+    "roles": []
+}
+
+
+### Synchronously add followers
+
+POST {{host}}/api/v1/add-followers/1
+Content-Type: application/json
+
+{
+    "followerLoginPrefix": "follower1",
+    "count": 10
+}
+
+
+### Asynchoronously add followers
+
+POST {{host}}/api/v1/add-followers/1
+Content-Type: application/json
+
+{
+    "followerLoginPrefix": "follower10",
+    "count": 1000,
+    "async": true
+}
+

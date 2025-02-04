@@ -281,7 +281,7 @@
 2. Устанавливаем `yarn` в контейнере (либо добавляем в образ, если планируем использовать дальше) командой
    `apk add yarn`
 3. Устанавливаем зависимости командой `yarn install`
-4. Устанавливаем загрузчик для работы с SASS командой `yarn add sass sass-loader@^14.0.0 --dev`
+4. Устанавливаем загрузчик для работы с SASS командой `yarn add sass-loader@^14.0.0 node-sass --dev`
 5. Устанавливаем bootstrap командой `yarn add @popperjs/core bootstrap --dev`
 6. Переименовываем файл `assets/styles/app.css` в `app.scss` и исправляем его
     ```scss
@@ -882,7 +882,7 @@
         {
         }
     
-        #[Route(path: '/api/v1/create-user', methods: ['GET', 'POST'])]
+        #[Route(path: '/api/v1/creat-user', methods: ['GET', 'POST'])]
         public function manageUserAction(Request $request): Response
         {
             return $this->render('phone-user.twig', $this->manager->getFormData($request));

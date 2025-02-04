@@ -116,16 +116,6 @@
 9. Ещё раз генерируем выравнивающую миграцию командой `php bin/console doctrine:migrations:diff`, видим ошибку,
    говорящую о том, что расхождений больше нет
 
-## Валидируем схему и игнорирум таблицу с версиями миграций
-
-1. Выполняем команду `php bin/console doctrine:schema:validate`, видим ошибки
-2. Выполняем команду `php bin/console doctrine:schema:update --dump-sql`, видим удаление таблицы с историей миграций
-3. В файле `config/packages/doctrine.yaml` добавляем в секцию `doctrine.dbal` новое поле
-    ```yaml
-    schema_filter: ~^(?!doctrine_)~
-    ```
-4. Ещё раз выполняем команду `php bin/console doctrine:schema:validate`, видим успешный результат
-
 ## Добавляем EventListener для заполнения мета-полей
 
 1. Создаём интерфейс `App\Domain\Entity\HasMetaTimestampsInterface`
