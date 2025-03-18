@@ -924,7 +924,7 @@
  
 ## Добавляем фасад
 
-1. Добавляем интерфейс `App\Domain\FeedServiceInterface`
+1. Добавляем интерфейс `App\Domain\Service\FeedServiceInterface`
     ```php
     <?php
     
