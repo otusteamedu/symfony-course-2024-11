@@ -1,0 +1,45 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+
+
+
+
+  bravik\Sales\Presentation\Contract\Sales: ~
+  bravik\Sales\Presentation\Contract\SalesInterface: '@bravik\Sales\Presentation\Contract\Sales'
+
+
+
+
+  # makes classes in src/ available to be used as services
+  # this creates a service per class whose id is the fully-qualified class name
+  bravik\Sales\Domain\UseCases\:
+    resource: '../src/Domain/UseCases'
+    exclude:
+      - '../src/Domain/UseCases/**/*Command'
+      - '../src/Domain/UseCases/**/*Query'
+      - '../src/Domain/UseCases/**/*Result'
+
+  bravik\Sales\Tests\Mocks\Repositories\InMemoryInvoicesRepository: ~
+  bravik\Sales\Tests\Mocks\Repositories\InMemoryProductsRepository: ~
+  bravik\Sales\Tests\Mocks\Repositories\InMemorySubscriptionsRepository: ~
+
+  bravik\Sales\Domain\Repositories\InvoicesRepositoryInterface: '@bravik\Sales\Tests\Mocks\Repositories\InMemoryInvoicesRepository'
+  bravik\Sales\Domain\Repositories\ProductsRepositoryInterface: '@bravik\Sales\Tests\Mocks\Repositories\InMemoryProductsRepository'
+  bravik\Sales\Domain\Repositories\SubscriptionsRepositoryInterface: '@bravik\Sales\Tests\Mocks\Repositories\InMemorySubscriptionsRepository'
+
+  bravik\Shared\Tests\Mocks\FlusherSpy: ~
+  bravik\Shared\Domain\FlusherInterface: '@bravik\Shared\Tests\Mocks\FlusherSpy'
+
+  bravik\Shared\Tests\Mocks\EventDispatcherSpy:
+    arguments:
+      $realEventDispatcher: null
+  bravik\Shared\Domain\EventDispatcherInterface: '@bravik\Shared\Tests\Mocks\EventDispatcherSpy'
+
+  bravik\Sales\Infrastructure\PaymentGateway: ~
+  bravik\Sales\Domain\PaymentGatewayInterface: '@bravik\Sales\Infrastructure\PaymentGateway'
+
+  bravik\Sales\Presentation\Http\AcceptPayment: ~

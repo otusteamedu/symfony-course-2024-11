@@ -4,7 +4,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/core": "*",
@@ -36,6 +36,7 @@
         "symfony/security-bundle": "7.1.*",
         "symfony/serializer": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
+        "symfony/uid": "7.1.*",
         "symfony/validator": "7.1.*",
         "symfony/webpack-encore-bundle": "^2.1",
         "symfony/yaml": "7.1.*",
@@ -52,7 +53,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "FeedBundle\\": "feedBundle/src/"
+            "FeedBundle\\": "feedBundle/src/",
+            "bravik\\Shared\\": "sharedKernel/src/",
+            "bravik\\Sales\\": "sales/src/"
         }
     },
     "autoload-dev": {
@@ -60,7 +63,9 @@
             "UnitTests\\": "tests/Unit",
             "FunctionalTests\\": "tests/Functional",
             "AcceptanceTests\\": "tests/Acceptance",
-            "Support\\": "tests/Support"
+            "Support\\": "tests/Support",
+            "bravik\\Shared\\Tests\\": "sharedKernel/tests/",
+            "bravik\\Sales\\Tests\\": "sales/tests/"
         }
     },
     "replace": {
