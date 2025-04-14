@@ -16,4 +16,5 @@ return [
     Nelmio\ApiDocBundle\NelmioApiDocBundle::class => ['all' => true],
     StatsdBundle\StatsdBundle::class => ['all' => true],
     FeedBundle\FeedBundle::class => ['all' => true],
+    \bravik\Sales\SalesBundle::class => ['all' => true],
 ];
